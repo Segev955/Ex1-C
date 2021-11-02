@@ -2,7 +2,7 @@
 #include <math.h>
 
 int isArmstrong(int num) {
-	int lenght = log10(num) +1;
+	int lenght = lenght1(num);
 	int f = 0;
 	for (int i = 0; i<=lenght ; i++) {
 		f += pow(num%10,lenght);
@@ -15,7 +15,7 @@ int isArmstrong(int num) {
 }
 
 int isPalindrome(int num) {
-	int lenght = log10(num)+1;
+	int lenght = lenght1(num);
 	int x = 0;
 	int y = 1;
 	int temp = num;
@@ -29,3 +29,13 @@ int isPalindrome(int num) {
 	}
 	return 0;
 }
+int lenght1 (int num) {
+	int x = 0;
+	while (num!=0)
+	{
+		x++;
+		num/10;
+	}
+	return x;
+}
+
