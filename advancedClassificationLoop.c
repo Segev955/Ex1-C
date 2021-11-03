@@ -2,7 +2,7 @@
 #include <math.h>
 #include "NumClass.h"
 
-/*
+
 int isArmstrong(int num) {
 	int lenght = length1(num);
 	int f = 0;
@@ -40,5 +40,5 @@ int length1 (int num) {
 		num /= 10;
 	}
 	return x;
-}*/
+}
 
