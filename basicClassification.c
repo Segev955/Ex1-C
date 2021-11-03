@@ -15,10 +15,12 @@ int isPrime(int num) {
 	return 1;
 }
 int isStrong (int num) {
+	int factorial(int) ;
 	int x = 0;
 	int temp = num;
 	while (temp != 0) {
-		x += factorial(temp%10)
+		int y = temp%10;
+		x += factorial(y);
 		temp /= 10;	
 	}
 	if (temp == num) {
