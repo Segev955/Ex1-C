@@ -1,8 +1,11 @@
 #include <stdio.h>
+#include "basicClassification.c"
+#include "advancedClassificationLoop.c"
+#include "advancedClassificationRecursion.c"
 
 int main() {
 	int x,y;
-	scanf("%d %d" &x, &y);
+	scanf("%d %d", &x, &y);
 	printf("Armstrong numbers::");
 	for(int i = x; i <= y; i++) {
 		if(isArmstrong(i) == 1) {
