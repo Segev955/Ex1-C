@@ -5,10 +5,11 @@
 
 int isArmstrong(int num) {
 	int lenght = length1(num);
-	int f = 0;
-	for (int i = 0; i<=lenght ; i++) {
-		f += pow(num%10,lenght);
-		num/=10;
+	int f = 0; //sum of the nth powers
+	int temp = num
+	while (temp!=0) {
+		f += pow(temp%10,lenght); 
+		temp/=10; 
 	}
 	if (f == num) {
 		return 1;
@@ -17,13 +18,11 @@ int isArmstrong(int num) {
 }
 
 int isPalindrome(int num) {
-	int lenght = length1(num); //int lenght
-	int x = 0; // 
-	int y = 1; //
+	int x = 0; //reverse number
 	int temp = num;
-	for (int i = 0; i<=lenght; i++) {
-		x += (temp % 10) * y;
-		y *= 10;
+	while (temp!=0) {
+		x *= 10;
+		x += (temp % 10);
 		temp /= 10;
 	}
 	if (x == num) {
