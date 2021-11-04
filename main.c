@@ -1,7 +1,5 @@
 #include <stdio.h>
-#include "basicClassification.c"
-#include "advancedClassificationLoop.c"
-#include "advancedClassificationRecursion.c"
+#include "NumClass.h"
 
 int main() {
 	int x,y;
