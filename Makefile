@@ -13,12 +13,22 @@ libclassrec.so : $(OBJECT_REC)
 	$(CC) -shared -o libclassrec.so $(OBJECTS_REC) -lm 
 libclassloops.so : $(OBJECTS_LOOP)
 	$(CC) -shared -o libclassloops.so $(OBJECTS_LOOP) -lm 
-mains : $(OBJECTS_MAIN) libclassrec.a 
+mains : $(OBJECTS_MAIN) libclassrec.a
 	$(CC) $(FLAGS) -o mains $(OBJECTS_MAIN) libclassrec.a -lm 
-maindloop: $(OBJECTS_MAIN) libclassloops.so 
-	$(CC) $(FLAGS) -o maindloop $(OBJECTS_MAIN) libclassloops.so -lm 
+maindloop: $(OBJECTS_MAIN) libclassloops.so
+	$(CC) $(FLAGS) -o maindloop $(OBJECTS_MAIN) ./libclassloops.so -lm 
 maindrec: $(OBJECTS_MAIN) libclassrec.so
-	$(CC) $(FLAGS) -o maindrec $(OBJECTS_MAIN) libclassrec.so -lm 
+	$(CC) $(FLAGS) -o maindrec $(OBJECTS_MAIN) ./libclassrec.so -lm 
+
+main.o: main.c NumClass.h
+	$(CC) $(FLAGS) -c main.c
+basicClassification.o: basicClassification.c NumClass.h
+	$(CC) $(FLAGS) -c basicClassification.c
+advancedClassificationLoop.o: advancedClassificationLoop.c NumClass.h
+	$(CC) $(FLAGS) -c advancedClassificationLoop.c 
+advancedClassificationRecursion.o: advancedClassificationRecursion.c NumClass.h
+	$(CC) $(FLAGS) -c advancedClassificationRecursion.c
+
 all: libclassloops.a libclassrec.a libclassrec.so libclassloops.so mains maindloop maindrec
 
 .PHONY: clean all
