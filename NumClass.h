@@ -1,5 +1,5 @@
-#include<stdio.h>
-#include<math.h>
+#ifndef _NumClass_H_
+#define _NumClass_H_
 
 int isArmstrong(int);
 int isPalindrome(int);
@@ -9,3 +9,5 @@ int factorial(int);
 int reverse(int);
 int myArmstrong(int,int,int);
 int length1 (int);
+
+#endif

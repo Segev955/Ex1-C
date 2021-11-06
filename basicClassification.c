@@ -17,14 +17,14 @@ int isPrime(int num) {
 }
 int isStrong (int num) {
 	int factorial(int) ;
-	int x = 0;
+	int x = 0; //sum of the factorial
 	int temp = num;
 	while (temp != 0) {
 		int y = temp%10;
 		x += factorial(y);
 		temp /= 10;	
 	}
-	if (temp == num) {
+	if (x == num) {
 		return 1;
 	}
 	return 0;
