@@ -30,7 +30,7 @@ int isPalindrome(int num) {
 	}
 	return 0;
 }
-// checking int length
+//checking int length
 int length1 (int num) {
 	int x = 0;
 	while (num!=0)
