@@ -6,7 +6,7 @@ int isPalindrome(int);
 int isPrime(int);
 int isStrong(int);
 int factorial(int);
-int reverse(int);
+int reverse(int,int,int);
 int myArmstrong(int,int,int);
 int length1 (int);
 
