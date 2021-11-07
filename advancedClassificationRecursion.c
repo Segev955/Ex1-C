@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <math.h>
 #include "NumClass.h"
-
+#define true 1
+#define false 0
 
 /**this function is called by isArmstrong function and check out with recursion if 
 * a given number "n" is equal to the sum of is digit powered by the number of digits of n
@@ -18,16 +19,16 @@ int myArmstrong(int n,int b, int c){// b represents the sum of the numbers
 int isArmstrong(int n){
 	int length = length1(n);
 	if(myArmstrong(n,0,length)==n)
-		return 1;
-	return 0;
+		return true;
+	return false;
 }
 /** this function checks out if a number is palindrome by checking out if the reversed number is equal to the number*/
 int isPalindrome(int n) {
 	int length = length1(n);
 	if(n==reverse(n,0,length)) {
-		return 1;
+		return true;
 	}
-	return 0;
+	return false;
 }
 
 /**this function using recursion to reverse the number*/
