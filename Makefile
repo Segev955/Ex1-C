@@ -5,6 +5,9 @@ OBJECTS_LOOP=advancedClassificationLoop.o basicClassification.o
 OBJECTS_REC=advancedClassificationRecursion.o basicClassification.o
 FLAGS= -Wall -g
 
+
+all: libclassloops.a libclassrec.a libclassrec.so libclassloops.so mains maindloop maindrec
+
 libclassloops.a : $(OBJECTS_LOOP)
 	$(AR) -rcs libclassloops.a $(OBJECTS_LOOP) 
 libclassrec.a : $(OBJECTS_REC)
@@ -28,8 +31,6 @@ advancedClassificationLoop.o: advancedClassificationLoop.c NumClass.h
 	$(CC) $(FLAGS) -c advancedClassificationLoop.c 
 advancedClassificationRecursion.o: advancedClassificationRecursion.c NumClass.h
 	$(CC) $(FLAGS) -c advancedClassificationRecursion.c
-
-all: libclassloops.a libclassrec.a libclassrec.so libclassloops.so mains maindloop maindrec
 
 .PHONY: clean all
 
