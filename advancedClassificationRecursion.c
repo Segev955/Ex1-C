@@ -23,26 +23,21 @@ int isArmstrong(int n){
 }
 /** this function checks out if a number is palindrome by checking out if the reversed number is equal to the number*/
 int isPalindrome(int n) {
-	if(n==reverse(n)) {
+	int length = length1(n);
+	if(n==reverse(n,0,length)) {
 		return 1;
 	}
 	return 0;
 }
 
 /**this function using recursion to reverse the number*/
-int reverse(int n){
-	int ld;//last digit
-	static int sum=0;
-	if(n!=0){
-		ld=n%10;//get the last digit 
-		sum=sum*10+ld;//add to the sum the last digit and mult by 10 so it will be the lsb
-		reverse(n/10);//recursive call to reverse
-	}
-	else {
-		return sum;
-	}
-	return sum;
+int reverse(int num,int reversed, int length){
+	if(length==0)
+	return reversed;
+	reversed= (reversed*10)+ (num%10);
+	return reverse(num/10, reversed, length-1);
 }
+
 int length1 (int num) {
 	int x = 0;
 	while (num!=0)
