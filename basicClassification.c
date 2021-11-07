@@ -1,19 +1,24 @@
 #include <stdio.h>
 #include <math.h>
 #include "NumClass.h"
+#define true 1
+#define false 0
 
 int isPrime(int num) {
+	if (num < 2) {
+		return false;
+	}
 	if (num == 2) {
-		return 1;
+		return true;
 	}
 	int i = 3;
 	while (i*i <= num) {
 		if (num % i == 0) {
-			return 0;
+			return false;
 		}
 	i++;
 	}
-	return 1;
+	return true;
 }
 int isStrong (int num) {
 	int factorial(int) ;
@@ -25,9 +30,9 @@ int isStrong (int num) {
 		temp /= 10;	
 	}
 	if (x == num) {
-		return 1;
+		return true;
 	}
-	return 0;
+	return false;
 	
 }
 int factorial (int num) {
