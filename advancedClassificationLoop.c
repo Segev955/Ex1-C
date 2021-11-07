@@ -6,7 +6,7 @@
 int isArmstrong(int num) {
 	int lenght = length1(num);
 	int f = 0; //sum of the nth powers
-	int temp = num
+	int temp = num;
 	while (temp!=0) {
 		f += pow(temp%10,lenght); 
 		temp/=10; 
