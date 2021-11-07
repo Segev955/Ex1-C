@@ -5,7 +5,7 @@
 #define false 0
 
 int isPrime(int num) {
-	if (num < 2) {
+	if (num < 1) {
 		return false;
 	}
 	if (num == 2) {
