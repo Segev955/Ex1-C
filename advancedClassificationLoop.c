@@ -1,20 +1,22 @@
 #include <stdio.h>
 #include <math.h>
 #include "NumClass.h"
+#define true 1
+#define false 0
 
 
 int isArmstrong(int num) {
-	int lenght = length1(num);
+	int length = length1(num);
 	int f = 0; //sum of the nth powers
 	int temp = num;
 	while (temp!=0) {
-		f += pow(temp%10,lenght); 
+		f += pow(temp%10,length); 
 		temp/=10; 
 	}
 	if (f == num) {
-		return 1;
+		return true;
 	}
-	return 0;
+	return false;
 }
 
 int isPalindrome(int num) {
@@ -26,9 +28,9 @@ int isPalindrome(int num) {
 		temp /= 10;
 	}
 	if (x == num) {
-		return 1;
+		return true;
 	}
-	return 0;
+	return false;
 }
 //checking int length
 int length1 (int num) {
