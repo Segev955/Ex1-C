@@ -23,8 +23,7 @@ int isArmstrong(int n){
 }
 /** this function checks out if a number is palindrome by checking out if the reversed number is equal to the number*/
 int isPalindrome(int n) {
-	int length;
-	length=length1(n);
+	int length = length1(n);
 	if(n==reverse(n,0,length)) {
 		return 1;
 	}
@@ -36,7 +35,7 @@ int reverse(int num,int reversed, int length){
 	if(length==0)
 	return reversed;
 	reversed= (reversed*10)+ (num%10);
-	return reverse2(num/10, reversed, length-1);
+	return reverse(num/10, reversed, length-1);
 }
 
 int length1 (int num) {
