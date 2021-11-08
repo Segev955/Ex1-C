@@ -7,15 +7,19 @@ FLAGS= -Wall -g
 
 
 all: libclassloops.a libclassrec.a libclassrec.so libclassloops.so mains maindloop maindrec
+loops: libclassloops.a 
+loopd: libclassloops.so
+recursives: libclassrec.a
+recursived: libclassrec.so
 
 libclassloops.a : $(OBJECTS_LOOP)
 	$(AR) -rcs libclassloops.a $(OBJECTS_LOOP) 
 libclassrec.a : $(OBJECTS_REC)
 	$(AR) -rcs libclassrec.a $(OBJECTS_REC)
 libclassrec.so : $(OBJECT_REC)
-	$(CC) -shared -o libclassrec.so $(OBJECTS_REC) -lm 
+	$(CC) -shared -o libclassrec.so $(OBJECTS_REC) 
 libclassloops.so : $(OBJECTS_LOOP)
-	$(CC) -shared -o libclassloops.so $(OBJECTS_LOOP) -lm 
+	$(CC) -shared -o libclassloops.so $(OBJECTS_LOOP) 
 mains : $(OBJECTS_MAIN) libclassrec.a
 	$(CC) $(FLAGS) -o mains $(OBJECTS_MAIN) libclassrec.a -lm 
 maindloop: $(OBJECTS_MAIN) libclassloops.so
