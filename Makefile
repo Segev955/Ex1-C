@@ -4,6 +4,7 @@ OBJECTS_MAIN=main.o
 OBJECTS_LOOP=advancedClassificationLoop.o basicClassification.o
 OBJECTS_REC=advancedClassificationRecursion.o basicClassification.o
 FLAGS= -Wall -g
+LM = -lm
 
 
 all: libclassloops.a libclassrec.a libclassrec.so libclassloops.so mains maindloop maindrec
@@ -21,11 +22,11 @@ libclassrec.so : $(OBJECT_REC)
 libclassloops.so : $(OBJECTS_LOOP)
 	$(CC) -shared -o libclassloops.so $(OBJECTS_LOOP) 
 mains : $(OBJECTS_MAIN) libclassrec.a
-	$(CC) $(FLAGS) -o mains $(OBJECTS_MAIN) libclassrec.a -lm 
+	$(CC) $(FLAGS) -o mains $(OBJECTS_MAIN) libclassrec.a $(LM)
 maindloop: $(OBJECTS_MAIN) libclassloops.so
-	$(CC) $(FLAGS) -o maindloop $(OBJECTS_MAIN) ./libclassloops.so -lm 
+	$(CC) $(FLAGS) -o maindloop $(OBJECTS_MAIN) ./libclassloops.so $(LM)
 maindrec: $(OBJECTS_MAIN) libclassrec.so
-	$(CC) $(FLAGS) -o maindrec $(OBJECTS_MAIN) ./libclassrec.so -lm 
+	$(CC) $(FLAGS) -o maindrec $(OBJECTS_MAIN) ./libclassrec.so $(LM)
 
 main.o: main.c NumClass.h
 	$(CC) $(FLAGS) -c main.c
